@@ -1,0 +1,429 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  header {
+    background: lightseagreen;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .project {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .project img {
+    margin-bottom: 1rem;
+    width: 100%; /* Make the image take up the full width of the container */
+    max-width: 400px; /* Set a maximum width for the image */
+    height: auto;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  article, aside, figure, form, table, blockquote {
+    margin: 20px 0;
+  }
+  
+  figure img {
+    max-width: 100%;
+     grid-row: auto;
+    grid-column: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  video {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin-top: 10px;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  blockquote {
+    border-left: 4px solid blue;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+  }
+  
+  footer {
+    background: lightseagreen;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+  
+    section {
+        flex-direction: column;
+    }
+  
+    video {
+        max-width: 100%;
+    }
+  }
+
+
+
+  /* From Uiverse.io by MijailVillegas */ 
+.card {
+  max-width: fit-content;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+  backdrop-filter: blur(15px);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.192),
+    inset 0 0 5px rgba(255, 255, 255, 0.274), 0 5px 5px rgba(0, 0, 0, 0.164);
+  transition: 0.5s;
+}
+
+.card:hover {
+  animation: ease-out 5s;
+  background: rgba(173, 173, 173, 0.05);
+}
+
+.card ul {
+  padding: 1rem;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.card ul li {
+  cursor: pointer;
+}
+
+.svg {
+  transition: all 0.3s;
+  /* if you find some problems change w - h : 30px*/
+  padding: 1rem;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  color: rgb(255, 174, 0);
+  fill: currentColor;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+}
+
+.text {
+  opacity: 0;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.3s;
+  color: rgb(255, 174, 0);
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  z-index: 9999;
+  box-shadow: -5px 0 1px rgba(153, 153, 153, 0.2),
+    -10px 0 1px rgba(153, 153, 153, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.082);
+}
+
+/*isometric prooyection*/
+.iso-pro {
+  transition: 0.5s;
+}
+.iso-pro:hover a > .svg {
+  transform: translate(15px, -15px);
+  border-radius: 100%;
+}
+
+.iso-pro:hover .text {
+  opacity: 1;
+  transform: translate(25px, -2px) skew(-5deg);
+}
+
+.iso-pro:hover .svg {
+  transform: translate(5px, -5px);
+}
+
+.iso-pro span {
+  opacity: 0;
+  position: absolute;
+  color: #1877f2;
+  border-color: #1877f2;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+  border-radius: 50%;
+  transition: all 0.3s;
+  height: 60px;
+  width: 60px;
+}
+
+.iso-pro:hover span {
+  opacity: 1;
+}
+
+.iso-pro:hover span:nth-child(1) {
+  opacity: 0.2;
+}
+
+.iso-pro:hover span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+}
+
+.iso-pro:hover span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+}
+
+/* From Uiverse.io by Rodrypaladin */ 
+.card {
+  width: 300px;
+  height: 300px;
+  background-image: linear-gradient(to right bottom, #252324, #292728, #2d2c2d, #313031, #353535);
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.307);
+}
+
+.top {
+  position: absolute;
+  width: 65%;
+  height: 37%;
+  top: 0;
+  left: 37px;
+  background-image: linear-gradient(to right bottom, #202020, #222222, #232323, #252525, #272727);
+  z-index: 500;
+  border-top: 4px solid #e8e8e8;
+  border-right: 3px solid #121212;
+  border-bottom: 3px solid #121212;
+  border-left: 3px solid #121212;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.plastic {
+  position: absolute;
+  top: 0;
+  right: 60px;
+  width: 60px;
+  background-color: black;
+  height: 100%;
+  z-index: 1000;
+  border-top: 25px solid white;
+}
+
+.bottom {
+  z-index: 1000;
+  position: absolute;
+  bottom: 1px;
+  right: 50%;
+  transform: translate(50%,0);
+  width: 75%;
+  height: 52%;
+  background-color: #ecebe0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: 3px solid #121212;
+  border-left: 3px solid #121212;
+  border-right: 3px solid #121212;
+  border-radius: 10px;
+}
+
+.metal {
+  z-index: 2000;
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 77%;
+  height: 103%;
+  background-image: linear-gradient(to right bottom, #bdbdbd, #cacaca, #d7d7d7, #e5e5e5, #f2f2f2);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: transform 0.2s ease-in;
+  clip-path: polygon(0% 0%, 0% 100%, 60% 100%, 60% 18%, 85% 18%, 85% 93%, 25% 93%, 25% 100%, 100% 100%, 100% 0%);
+}
+
+.cuadro-metal {
+  position: absolute;
+  top: 15px;
+  right: 45px;
+  width: 40px;
+  transform: translate(50%,0);
+  height: 80px;
+  background-color: #252324;
+  z-index: 2000;
+  transition: transform 0.2s ease-in;
+  border-radius: 3px;
+}
+
+.card:hover .metal {
+  transform: translateX(-44px);
+}
+
+.card:hover .cuadro-metal {
+  transform: translateX(-30px);
+}
+
+.minicuadro1 {
+  bottom: 25px;
+  right: 12px;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background-color: #d7d7d7;
+  border: 2px solid #191919;
+}
+
+.minicuadro2 {
+  bottom: 25px;
+  left: 12px;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background-image: linear-gradient(to right bottom, #191919, #202020, #272727, #2e2e2e, #353535);
+  border: 2px solid #191919;
+}
+
+.yellow {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 23px;
+  background-color: rgb(255, 157, 0);
+}
+
+.line1 {
+  position: absolute;
+  bottom: 42px;
+  right: 61.5%;
+  transform: translate(50%,0);
+  width: 125px;
+  height: 2px;
+  background-color: rgb(192, 33, 33);
+}
+
+.line2 {
+  position: absolute;
+  bottom: 64px;
+  right: 50%;
+  transform: translate(50%,0);
+  width: 175px;
+  height: 2px;
+  background-color: rgb(192, 33, 33);
+  z-index: 2000;
+}
+
+.line3 {
+  position: absolute;
+  bottom: 86px;
+  right: 50%;
+  transform: translate(50%,0);
+  width: 175px;
+  height: 2px;
+  background-color: rgb(192, 33, 33);
+  z-index: 2000;
+}
+
+.line4 {
+  position: absolute;
+  bottom: 108px;
+  right: 50%;
+  transform: translate(50%,0);
+  width: 175px;
+  height: 2px;
+  background-color: rgb(192, 33, 33);
+  z-index: 2000;
+}
+
+.line5 {
+  position: absolute;
+  bottom: 130px;
+  right: 50%;
+  transform: translate(50%,0);
+  width: 175px;
+  height: 2px;
+  background-color: rgb(192, 33, 33);
+  z-index: 2000;
+}
+
+.index {
+  position: absolute;
+  bottom: 35px;
+  right: 62px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(192, 33, 33);
+  z-index: 2000;
+}
+
